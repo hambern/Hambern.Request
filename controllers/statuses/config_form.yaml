@@ -1,0 +1,11 @@
+name: 'hambern.request::lang.labels.status'
+modelClass: hambern\request\Models\Status
+form: $/hambern/request/models/status/fields.yaml
+defaultRedirect: hambern/request/statuses
+create:
+    redirect: 'hambern/request/statuses/update/:id'
+    redirectClose: hambern/request/statuses
+update:
+    redirect: hambern/request/statuses
+    redirectClose: hambern/request/statuses
+preview: {  }

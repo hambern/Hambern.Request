@@ -1,0 +1,15 @@
+title: 'hambern.request::lang.statuses.label'
+modelClass: hambern\request\Models\Status
+list: $/hambern/request/models/status/columns.yaml
+recordUrl: 'hambern/request/statuses/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+showSorting: true
+defaultSort:
+    column: sort_order
+    direction: asc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

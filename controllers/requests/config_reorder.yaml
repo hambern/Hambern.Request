@@ -1,0 +1,4 @@
+title: Requests
+modelClass: Hambern\Request\Models\Request
+toolbar:
+    buttons: reorder_toolbar

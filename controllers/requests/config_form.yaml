@@ -1,0 +1,11 @@
+name: Requests
+modelClass: hambern\request\Models\Request
+form: $/hambern/request/models/request/fields.yaml
+defaultRedirect: hambern/request/requests
+create:
+    redirect: 'hambern/request/requests/update/:id'
+    redirectClose: hambern/request/requests
+update:
+    redirect: hambern/request/requests
+    redirectClose: hambern/request/requests
+preview: {  }

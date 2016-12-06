@@ -1,0 +1,10 @@
+fields:
+    color:
+        label: 'hambern.request::lang.labels.color'
+        span: auto
+        type: colorpicker
+    title:
+        label: 'hambern.request::lang.labels.title'
+        span: auto
+        required: 1
+        type: text

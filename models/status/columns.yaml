@@ -1,0 +1,16 @@
+columns:
+    sort_order:
+        label: 'hambern.request::lang.labels.sort_order'
+        invisible: true
+        type: number
+        sortable: true
+    color:
+        label: 'hambern.request::lang.labels.color'
+        type: partial
+        path: ~/plugins/hambern/request/partials/_color_column.htm
+        width: 1px
+    title:
+        label: 'hambern.request::lang.labels.title'
+        type: text
+        searchable: true
+        sortable: true

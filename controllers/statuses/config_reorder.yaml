@@ -1,0 +1,5 @@
+title: 'hambern.request::lang.statuses.label'
+modelClass: Hambern\Request\Models\Status
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

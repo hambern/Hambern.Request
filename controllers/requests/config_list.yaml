@@ -1,0 +1,16 @@
+title: 'hambern.request::lang.requests.label'
+modelClass: hambern\request\Models\Request
+list: $/hambern/request/models/request/columns.yaml
+recordUrl: 'hambern/request/requests/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+showSorting: true
+defaultSort:
+    column: created_at
+    direction: desc
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+filter: $/hambern/request/controllers/requests/config_filter.yaml

@@ -1,0 +1,50 @@
+fields:
+    title:
+        label: 'hambern.request::lang.labels.title'
+        span: auto
+        required: 1
+        type: text
+    status:
+        label: 'hambern.request::lang.labels.status'
+        nameFrom: title
+        default: 1
+        descriptionFrom: description
+        span: auto
+        required: 1
+        type: relation
+    created_at:
+        label: 'hambern.request::lang.labels.created'
+        default: now
+        span: full
+        type: datepicker
+
+tabs:
+  fields:
+    message:
+        label: 'hambern.request::lang.labels.message'
+        size: giant
+        span: full
+        type: textarea
+        tab: 'hambern.request::lang.labels.message'
+    name:
+        label: 'hambern.request::lang.labels.name'
+        span: full
+        required: 1
+        type: text
+        tab: 'hambern.request::lang.labels.customer'
+    email:
+        label: 'hambern.request::lang.labels.email'
+        span: auto
+        type: text
+        tab: 'hambern.request::lang.labels.customer'
+    phone:
+        label: 'hambern.request::lang.labels.phone'
+        span: auto
+        type: text
+        tab: 'hambern.request::lang.labels.customer'
+    note:
+        label: 'hambern.request::lang.labels.note'
+        size: giant
+        span: full
+        type: textarea
+        tab: 'hambern.request::lang.labels.note'

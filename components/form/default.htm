@@ -1,0 +1,32 @@
+<div id="request_form">
+
+    {{ form_ajax(__SELF__~'::onPost') }}
+
+    <input name="homepage" type="text" style="display: none" value="">
+    <div class="form-group">
+        <label for="name">{{ trans('hambern.request::lang.labels.my_name') }}</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="{{ trans('hambern.request::lang.labels.my_name') }}">
+    </div>
+    {#<div class="form-group">
+        <label for="phone">{{ trans('hambern.request::lang.labels.phone') }}</label>
+        <input type="text" class="form-control" name="phone" id="phone" placeholder="{{ trans('hambern.request::lang.labels.phone') }}">
+    </div>#}
+    <div class="form-group">
+        <label for="phone">{{ trans('hambern.request::lang.labels.email') }}</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="{{ trans('hambern.request::lang.labels.email') }}">
+    </div>
+
+    <div class="form-group">
+        <label for="title">{{ trans('hambern.request::lang.labels.subject') }}</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="{{ trans('hambern.request::lang.labels.subject') }}">
+    </div>
+    <div class="form-group">
+        <label for="title">{{ trans('hambern.request::lang.labels.message') }}</label>
+        <textarea class="form-control" name="message" id="description" rows="7"></textarea>
+    </div>
+
+    <div id="form_message"></div>
+    <button class="btn btn-primary form-control" type="submit">{{ trans('hambern.request::lang.labels.send') }} »</button>
+
+{{ form_close() }}
+</div>

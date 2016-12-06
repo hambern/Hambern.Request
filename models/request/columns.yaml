@@ -1,0 +1,44 @@
+columns:
+    color:
+        label: 'hambern.request::lang.labels.color'
+        relation: status
+        select: color
+        type: partial
+        path: ~/plugins/hambern/request/partials/_color_column.htm
+        width: 1px
+        searchable: false
+        sortable: false
+        invisible: false
+    status_id:
+        label: 'hambern.request::lang.labels.status'
+        relation: status
+        select: title
+        searchable: true
+        sortable: true
+        invisible: true
+    title:
+        label: 'hambern.request::lang.labels.title'
+        type: text
+        searchable: true
+        sortable: true
+    name:
+        label: 'hambern.request::lang.labels.name'
+        type: text
+        searchable: true
+        sortable: true
+    email:
+        label: 'hambern.request::lang.labels.email'
+        type: text
+        searchable: true
+        sortable: true
+        invisible: true
+    phone:
+        label: 'hambern.request::lang.labels.phone'
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'hambern.request::lang.labels.created'
+        type: date time
+        searchable: true
+        sortable: true

@@ -1,0 +1,6 @@
+scopes:
+    status:
+        label: hambern.request::lang.statuses.label
+        modelClass: Hambern\Request\Models\Status
+        conditions: status_id in (:filtered)
+        nameFrom: title

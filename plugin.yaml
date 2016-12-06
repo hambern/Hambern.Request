@@ -1,0 +1,37 @@
+plugin:
+    name: 'hambern.request::lang.plugin.name'
+    description: 'hambern.request::lang.plugin.description'
+    author: Hambern
+    icon: icon-inbox
+    homepage: 'http://hambergmedia.se'
+permissions:
+    requests:
+        tab: 'hambern.request::lang.plugin.name'
+        label: 'hambern.request::lang.requests.label'
+    statuses:
+        tab: 'hambern.request::lang.plugin.name'
+        label: 'hambern.request::lang.statuses.label'
+    settings:
+        tab: 'hambern.request::lang.plugin.name'
+        label: 'hambern.request::lang.settings.label'
+navigation:
+    request:
+        label: 'hambern.request::lang.requests.label'
+        url: hambern/request/requests
+        icon: icon-inbox
+        permissions:
+            - requests
+        sideMenu:
+            requests:
+                label: 'hambern.request::lang.requests.label'
+                url: hambern/request/requests
+                icon: icon-inbox
+                counter: newRequests
+                permissions:
+                    - requests
+            statuses:
+                label: 'hambern.request::lang.statuses.label'
+                url: hambern/request/statuses
+                icon: icon-check-circle
+                permissions:
+                    - statuses
