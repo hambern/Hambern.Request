@@ -6,6 +6,3 @@
 1.0.3:
     - 'Created table hambern_request_statuses'
     - builder_table_create_hambern_request_statuses.php
-1.0.4:
-    - 'Updated statuses with color'
-    - builder_table_update_hambern_request_statuses.php

@@ -2,10 +2,11 @@ fields:
     send_mail:
         label: 'hambern.request::lang.labels.send_mail'
         type: switch
-        default: true
+        default: false
     receive_groups:
         label: 'hambern.request::lang.labels.receive_groups'
         type: checkboxlist
     default_status:
         label: 'hambern.request::lang.labels.default_status'
         type: dropdown
+        emptyOption: —

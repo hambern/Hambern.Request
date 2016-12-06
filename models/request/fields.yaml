@@ -20,12 +20,12 @@ fields:
 
 tabs:
   fields:
-    message:
-        label: 'hambern.request::lang.labels.message'
+    content:
+        label: 'hambern.request::lang.labels.content'
         size: giant
         span: full
         type: textarea
-        tab: 'hambern.request::lang.labels.message'
+        tab: 'hambern.request::lang.labels.content'
     name:
         label: 'hambern.request::lang.labels.name'
         span: full

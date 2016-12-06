@@ -28,18 +28,24 @@ class Form extends ComponentBase
         $request->save(null, $post['_session_key']);
 
         if (Settings::get('send_mail')) {
-            if (!empty($ids = Settings::get('receive_groups'))) {
-                foreach (UserGroup::find($ids) as $group) {
-                    foreach ($group->users as $user) {
-                        Mail::send('hambern.request::mail.request_notice', $post, function ($message) use ($post, $user) {
-                            $message->replyTo($post['email'], $post['name']);
-                            $message->to($user->email);
-                        });
-                    }
+            $this->sendNoticeMail();
+        }
+        return ['#request_form' => $this->renderPartial('@_thanks')];
+    }
+
+    public function sendNoticeMail()
+    {
+        $post = post();
+        if (!empty($ids = Settings::get('receive_groups'))) {
+            foreach (UserGroup::find($ids) as $group) {
+                foreach ($group->users as $user) {
+                    Mail::send('hambern.request::mail.notice', $post, function ($message) use ($post, $user) {
+                        $message->replyTo($post['email'], $post['name']);
+                        $message->to($user->email);
+                    });
                 }
             }
         }
-        return ['#request_form' => $this->renderPartial('@_thanks')];
     }
 
     public function componentDetails()

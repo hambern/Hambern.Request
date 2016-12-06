@@ -21,6 +21,13 @@ columns:
         type: text
         searchable: true
         sortable: true
+    content:
+        label: 'hambern.request::lang.labels.content'
+        type: text
+        truncate: 50
+        searchable: true
+        sortable: false
+        invisible: true
     name:
         label: 'hambern.request::lang.labels.name'
         type: text

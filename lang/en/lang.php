@@ -10,7 +10,7 @@
         'email' => 'E-mail',
         'phone' => 'Telephone',
         'customer' => 'Customer',
-        'message' => 'Message',
+        'content' => 'Message',
         'attachments' => 'Attachments',
         'note' => 'Note',
         'created' => 'Created',

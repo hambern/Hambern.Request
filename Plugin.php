@@ -48,6 +48,13 @@ class Plugin extends PluginBase
         }
     }
 
+    public function registerMailTemplates()
+    {
+        return [
+            'hambern.request::mail.notice'   => 'A request notice to send to administrators',
+        ];
+    }
+
     public function newRequests()
     {
         $id = Settings::get('default_status') ?: null;

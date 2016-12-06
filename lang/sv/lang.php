@@ -10,7 +10,7 @@
         'email' => 'E-post',
         'phone' => 'Telefon',
         'customer' => 'Kund',
-        'message' => 'Meddelande',
+        'content' => 'Meddelande',
         'attachments' => 'Bilagor',
         'note' => 'Anteckning',
         'created' => 'Inlämnad',

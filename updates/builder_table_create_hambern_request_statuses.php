@@ -10,6 +10,7 @@ class BuilderTableCreateHambernRequestStatuses extends Migration
         Schema::create('hambern_request_statuses', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
+            $table->string('color', 10)->nullable();
             $table->integer('sort_order')->unsigned()->index();
             $table->string('title', 64);
             $table->nullableTimestamps();

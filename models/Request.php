@@ -14,7 +14,7 @@ class Request extends Model
       'name'          => 'required|regex:/[a-ö A-Ö]/|min:5',
       'phone'         => '',
       'email'         => 'required|email',
-      'message'       => 'required|regex:/[^@]/|min:5',
+      'content'       => 'required|regex:/[^@]/|min:5',
       'homepage'      => 'max:0',
     ];
 

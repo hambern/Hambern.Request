@@ -11,7 +11,7 @@ class BuilderTableCreateHambernRequestRequests extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->string('title', 64);
-            $table->text('message');
+            $table->text('content');
             $table->string('name', 128);
             $table->string('phone', 64)->nullable();
             $table->string('email', 64)->nullable();
