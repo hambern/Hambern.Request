@@ -16,8 +16,8 @@ columns:
         searchable: true
         sortable: true
         invisible: true
-    title:
-        label: 'hambern.request::lang.labels.title'
+    subject:
+        label: 'hambern.request::lang.labels.subject'
         type: text
         searchable: true
         sortable: true

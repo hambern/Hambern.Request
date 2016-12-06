@@ -6,6 +6,7 @@
     'labels' => [
         'status' => 'Status',
         'name' => 'Name',
+        'subject' => 'Subject',
         'title' => 'Title',
         'email' => 'E-mail',
         'phone' => 'Telephone',
@@ -20,8 +21,6 @@
         'default_status' => 'Default status',
         'send_mail' => 'Send mail',
         'receive_groups' => 'Recieve groups',
-        'my_name' => 'Ny name',
-        'subject' => 'Subject',
         'send' => 'Send',
     ],
     'form' => [

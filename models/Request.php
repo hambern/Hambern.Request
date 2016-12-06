@@ -3,26 +3,26 @@
 use Model;
 
 /**
- * Model
- */
+* Model
+*/
 class Request extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     public $rules = [
-      'title'         => 'required|min:5',
-      'name'          => 'required|regex:/[a-ö A-Ö]/|min:5',
-      'phone'         => '',
-      'email'         => 'required|email',
-      'content'       => 'required|regex:/[^@]/|min:5',
-      'homepage'      => 'max:0',
+        'subject'       => 'filled|min:5',
+        'name'          => 'filled|regex:/[a-ö A-Ö]/|min:5',
+        'phone'         => 'filled|min:9',
+        'email'         => 'required|email',
+        'content'       => 'required|regex:/[^@]/|min:9',
+        'homepage'      => 'max:0',
     ];
 
-    public $guarded = [];
+    public $fillable = ['subject', 'name', 'phone', 'email', 'content'];
 
     public $table = 'hambern_request_requests';
 
     public $belongsTo = [
-      'status' => 'Hambern\Request\Models\Status'
+        'status' => 'Hambern\Request\Models\Status'
     ];
 }

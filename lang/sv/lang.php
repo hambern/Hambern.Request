@@ -6,6 +6,7 @@
     'labels' => [
         'status' => 'Status',
         'name' => 'Namn',
+        'subject' => 'Ämne',
         'title' => 'Titel',
         'email' => 'E-post',
         'phone' => 'Telefon',
@@ -20,8 +21,6 @@
         'default_status' => 'Ursprunglig status',
         'send_mail' => 'Skicka mejl',
         'receive_groups' => 'Mottagargrupper',
-        'my_name' => 'Mitt namn',
-        'subject' => 'Ämne',
         'send' => 'Skicka',
     ],
     'form' => [

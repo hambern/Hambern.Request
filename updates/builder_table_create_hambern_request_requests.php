@@ -10,14 +10,13 @@ class BuilderTableCreateHambernRequestRequests extends Migration
         Schema::create('hambern_request_requests', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
-            $table->string('title', 64);
-            $table->text('content');
-            $table->string('name', 128);
+            $table->string('subject', 64)->nullable();
+            $table->text('content')->nullable();
+            $table->string('name', 128)->nullable();
             $table->string('phone', 64)->nullable();
             $table->string('email', 64)->nullable();
             $table->text('note');
             $table->integer('status_id')->nullable()->default(1);
-            $table->dateTime('answered_at')->nullable();
             $table->nullableTimestamps();
         });
     }

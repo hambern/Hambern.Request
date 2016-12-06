@@ -12,15 +12,19 @@ use Validator;
 
 class Form extends ComponentBase
 {
+    public function onRender()
+    {
+        $this->page['property'] = $this->getProperties();
+    }
+
     public function onPost()
     {
         $request = new Request;
         $validator = Validator::make($post = post(), $request->rules);
         if ($validator->fails()) {
             $errors = $validator->messages()->all();
-            return ['#form_message' => $this->renderPartial('@_errors', compact('errors'))];
+            return ['#form_message' => $this->renderPartial('@errors', compact('errors'))];
         }
-        unset($post['homepage']);
         $request->fill($post);
         if ($status = Status::first()) {
             $request->status_id = Settings::get('default_status') ?: $status->id;
@@ -30,17 +34,17 @@ class Form extends ComponentBase
         if (Settings::get('send_mail')) {
             $this->sendNoticeMail();
         }
-        return ['#request_form' => $this->renderPartial('@_thanks')];
+        return ['#request_form' => $this->renderPartial('@thanks')];
     }
 
     public function sendNoticeMail()
     {
-        $post = post();
         if (!empty($ids = Settings::get('receive_groups'))) {
             foreach (UserGroup::find($ids) as $group) {
                 foreach ($group->users as $user) {
+                    $post = post();
                     Mail::send('hambern.request::mail.notice', $post, function ($message) use ($post, $user) {
-                        $message->replyTo($post['email'], $post['name']);
+                        $message->replyTo($post['email'], !empty($post['name']) ? $post['name'] : null);
                         $message->to($user->email);
                     });
                 }
@@ -58,6 +62,25 @@ class Form extends ComponentBase
 
     public function defineProperties()
     {
-        return [];
+        return [
+            'name' => [
+                'title'             => 'hambern.request::lang.labels.name',
+                'description'       => 'Let the guest enter a name',
+                'type'              => 'checkbox',
+                'default'           => true,
+            ],
+            'phone' => [
+                'title'             => 'hambern.request::lang.labels.phone',
+                'description'       => 'Let the guest enter a phone number',
+                'type'              => 'checkbox',
+                'default'           => false,
+            ],
+            'subject' => [
+                'title'             => 'hambern.request::lang.labels.subject',
+                'description'       => 'Let the guest enter a subject',
+                'type'              => 'checkbox',
+                'default'           => true,
+            ],
+        ];
     }
 }
