@@ -5,15 +5,27 @@ use Hambern\Request\Models\Request;
 use Hambern\Request\Models\Settings;
 use System\Classes\PluginBase;
 
+/**
+ * Class Plugin
+ *
+ * @package Hambern\Request
+ */
 class Plugin extends PluginBase
 {
+
+    /**
+     * @return array
+     */
     public function registerComponents()
     {
         return [
-            'Hambern\Request\Components\Form'    => 'Form',
+            'Hambern\Request\Components\Form' => 'Form',
         ];
     }
 
+    /**
+     * @return array
+     */
     public function registerSettings()
     {
         return [
@@ -30,13 +42,19 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * @return array
+     */
     public function registerNavigation()
     {
         $configuration = $this->getConfigurationFromYaml();
+
         if (array_key_exists('navigation', $configuration)) {
             $navigation = $configuration['navigation'];
+
             if (is_array($navigation)) {
                 array_walk_recursive($navigation, function (&$item, $key) {
+
                     if ($key === 'url') {
                         $item = Backend::url($item);
                     } elseif ($key === 'counter') {
@@ -44,20 +62,28 @@ class Plugin extends PluginBase
                     }
                 });
             }
+
             return $navigation;
         }
     }
 
+    /**
+     * @return array
+     */
     public function registerMailTemplates()
     {
         return [
-            'hambern.request::mail.notice'   => 'A request notice to send to administrators',
+            'hambern.request::mail.notice' => 'A request notice to send to administrators',
         ];
     }
 
+    /**
+     * @return null
+     */
     public function newRequests()
     {
         $id = Settings::get('default_status') ?: null;
+
         return Request::whereHas('status', function ($status) use ($id) {
             $status->whereId($id);
         })->count() ?: null;

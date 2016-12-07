@@ -3,8 +3,17 @@
 use October\Rain\Database\Updates\Migration;
 use Schema;
 
+/**
+ * Class BuilderTableCreateHambernRequestStatuses
+ *
+ * @package Hambern\Request\Updates
+ */
 class BuilderTableCreateHambernRequestStatuses extends Migration
 {
+
+    /**
+     *
+     */
     public function up()
     {
         Schema::create('hambern_request_statuses', function ($table) {
@@ -17,6 +26,9 @@ class BuilderTableCreateHambernRequestStatuses extends Migration
         });
     }
 
+    /**
+     *
+     */
     public function down()
     {
         Schema::dropIfExists('hambern_request_statuses');

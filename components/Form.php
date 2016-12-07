@@ -10,41 +10,65 @@ use Lang;
 use Mail;
 use Validator;
 
+/**
+ * Class Form
+ *
+ * @package Hambern\Request\Components
+ */
 class Form extends ComponentBase
 {
+
+    /**
+     *
+     */
     public function onRender()
     {
         $this->page['property'] = $this->getProperties();
     }
 
+    /**
+     * @return array
+     */
     public function onPost()
     {
         $request = new Request;
         $validator = Validator::make($post = post(), $request->rules);
+
         if ($validator->fails()) {
             $errors = $validator->messages()->all();
+
             return ['#form_message' => $this->renderPartial('@errors', compact('errors'))];
         }
+
         $request->fill($post);
+
         if ($status = Status::first()) {
             $request->status_id = Settings::get('default_status') ?: $status->id;
         }
+
         $request->save(null, $post['_session_key']);
 
         if (Settings::get('send_mail')) {
             $this->sendNoticeMail();
         }
+
         return ['#request_form' => $this->renderPartial('@thanks')];
     }
 
+    /**
+     *
+     */
     public function sendNoticeMail()
     {
-        if (!empty($ids = Settings::get('receive_groups'))) {
+        if (! empty($ids = Settings::get('receive_groups'))) {
+
             foreach (UserGroup::find($ids) as $group) {
+
                 foreach ($group->users as $user) {
                     $post = post();
+
                     Mail::send('hambern.request::mail.notice', $post, function ($message) use ($post, $user) {
-                        $message->replyTo($post['email'], !empty($post['name']) ? $post['name'] : null);
+                        $message->replyTo($post['email'], ! empty($post['name']) ? $post['name'] : null);
                         $message->to($user->email);
                     });
                 }
@@ -52,6 +76,9 @@ class Form extends ComponentBase
         }
     }
 
+    /**
+     * @return array
+     */
     public function componentDetails()
     {
         return [
@@ -60,26 +87,29 @@ class Form extends ComponentBase
         ];
     }
 
+    /**
+     * @return array
+     */
     public function defineProperties()
     {
         return [
-            'name' => [
-                'title'             => 'hambern.request::lang.labels.name',
-                'description'       => 'Let the guest enter a name',
-                'type'              => 'checkbox',
-                'default'           => true,
+            'name'    => [
+                'title'       => 'hambern.request::lang.labels.name',
+                'description' => 'Let the guest enter a name',
+                'type'        => 'checkbox',
+                'default'     => true,
             ],
-            'phone' => [
-                'title'             => 'hambern.request::lang.labels.phone',
-                'description'       => 'Let the guest enter a phone number',
-                'type'              => 'checkbox',
-                'default'           => false,
+            'phone'   => [
+                'title'       => 'hambern.request::lang.labels.phone',
+                'description' => 'Let the guest enter a phone number',
+                'type'        => 'checkbox',
+                'default'     => false,
             ],
             'subject' => [
-                'title'             => 'hambern.request::lang.labels.subject',
-                'description'       => 'Let the guest enter a subject',
-                'type'              => 'checkbox',
-                'default'           => true,
+                'title'       => 'hambern.request::lang.labels.subject',
+                'description' => 'Let the guest enter a subject',
+                'type'        => 'checkbox',
+                'default'     => true,
             ],
         ];
     }

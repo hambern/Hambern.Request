@@ -7,26 +7,30 @@
     {% if property.name %}
     <div class="form-group">
         <label for="name">{{ trans('hambern.request::lang.labels.name') }}</label>
-        <input type="text" class="form-control" name="name" id="name" placeholder="{{ trans('hambern.request::lang.labels.name') }}">
+        <input type="text" class="form-control" name="name" id="name"
+               placeholder="{{ trans('hambern.request::lang.labels.name') }}">
     </div>
     {% endif %}
 
     {% if property.phone %}
     <div class="form-group">
         <label for="phone">{{ trans('hambern.request::lang.labels.phone') }}</label>
-        <input type="text" class="form-control" name="phone" id="phone" placeholder="{{ trans('hambern.request::lang.labels.phone') }}">
+        <input type="text" class="form-control" name="phone" id="phone"
+               placeholder="{{ trans('hambern.request::lang.labels.phone') }}">
     </div>
     {% endif %}
 
     <div class="form-group">
         <label for="phone">{{ trans('hambern.request::lang.labels.email') }}</label>
-        <input type="email" class="form-control" name="email" id="email" placeholder="{{ trans('hambern.request::lang.labels.email') }}">
+        <input type="email" class="form-control" name="email" id="email"
+               placeholder="{{ trans('hambern.request::lang.labels.email') }}">
     </div>
 
     {% if property.subject %}
     <div class="form-group">
         <label for="title">{{ trans('hambern.request::lang.labels.subject') }}</label>
-        <input type="text" class="form-control" name="subject" id="title" placeholder="{{ trans('hambern.request::lang.labels.subject') }}">
+        <input type="text" class="form-control" name="subject" id="title"
+               placeholder="{{ trans('hambern.request::lang.labels.subject') }}">
     </div>
     {% endif %}
 
@@ -39,5 +43,5 @@
 
     <button class="btn btn-primary form-control" type="submit">{{ trans('hambern.request::lang.labels.send') }}</button>
 
-{{ form_close() }}
+    {{ form_close() }}
 </div>
