@@ -17,7 +17,7 @@ class EditTableStatuses20170322 extends Migration
     public function up()
     {
         Schema::table('hambern_request_statuses', function($table) {
-            $table->integer('sort_order')->unsigned()->default(0)->index()->change();
+            $table->integer('sort_order')->default(0)->change();
         });
     }
 
@@ -27,7 +27,7 @@ class EditTableStatuses20170322 extends Migration
     public function down()
     {
         Schema::table('hambern_request_statuses', function($table) {
-            $table->integer('sort_order')->unsigned()->index()->change();
+            $table->integer('sort_order')->change();
         });
     }
 }
