@@ -9,3 +9,6 @@
 1.0.4:
     - 'Made notes nullable'
     - edit_table_requests_20170322.php
+1.0.5:
+    - 'Gave sort_order a default value'
+    - edit_table_statuses_20170322.php
