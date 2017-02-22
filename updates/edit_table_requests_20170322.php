@@ -16,7 +16,7 @@ class EditTableRequests20170322 extends Migration
      */
     public function up()
     {
-        Schema::table('users', function($table) {
+        Schema::table('hambern_request_requests', function($table) {
             $table->text('note')->nullable()->change();
         });
     }
@@ -26,7 +26,7 @@ class EditTableRequests20170322 extends Migration
      */
     public function down()
     {
-        Schema::table('users', function($table) {
+        Schema::table('hambern_request_requests', function($table) {
             $table->text('note')->change();
         });
     }
