@@ -9,6 +9,7 @@ use Hambern\Request\Models\Status;
 use Lang;
 use Mail;
 use Validator;
+use ValidationException;
 
 /**
  * Class Form
@@ -32,12 +33,14 @@ class Form extends ComponentBase
     public function onPost()
     {
         $request = new Request;
-        $validator = Validator::make($post = post(), $request->rules);
+        $validator = Validator::make(
+            $post = post(),
+            $request->rules,
+            Lang::get('hambern.request::lang.messages')
+        );
 
         if ($validator->fails()) {
-            $errors = $validator->messages()->all();
-
-            return ['#form_message' => $this->renderPartial('@errors', compact('errors'))];
+            throw new ValidationException($validator);
         }
 
         $request->fill($post);

@@ -1,6 +1,6 @@
 <div id="request_form">
 
-    {{ form_ajax(__SELF__~'::onPost') }}
+    {{ form_ajax('onPost', { 'data-request-validate': true, update: { '': '#request_form' }}) }}
 
     <input name="homepage" type="text" style="display: none" value="">
 
@@ -39,9 +39,9 @@
         <textarea class="form-control" name="content" id="description" rows="7"></textarea>
     </div>
 
-    <div id="form_message"></div>
+    <button class="btn btn-success btn-block" type="submit">{{ trans('hambern.request::lang.labels.send') }}</button>
 
-    <button class="btn btn-primary form-control" type="submit">{{ trans('hambern.request::lang.labels.send') }}</button>
+    <div data-validate-error class="text-danger mt-2"></div>
 
     {{ form_close() }}
 </div>

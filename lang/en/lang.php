@@ -38,6 +38,10 @@
         'description' => 'Change basic settings',
     ],
     'messages' => [
-        'thanks' => 'Thank you for your message. We will get back to you',
+        'thanks' => 'Thank you for your message',
+        'name.required' => 'You must enter your name',
+        'email.required' => 'You must enter your e-mail',
+        'subject.required' => 'You must enter a subject',
+        'content.required' => "The message can't be empty",
     ],
 ];

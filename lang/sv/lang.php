@@ -39,5 +39,9 @@
     ],
     'messages' => [
         'thanks' => 'Tack för ditt meddelande',
+        'name.required' => 'Du måste ange ditt namn',
+        'email.required' => 'Du måste ange en e-postaddress',
+        'subject.required' => 'Du måste ange ett ämne',
+        'content.required' => 'Meddelandet får inte vara tomt',
     ],
 ];
