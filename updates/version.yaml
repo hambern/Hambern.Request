@@ -12,3 +12,6 @@
 1.0.5:
     - 'Gave sort_order a default value'
     - edit_table_statuses_20170322.php
+1.0.6:
+    - 'Updated table hambern_request_requests'
+    - builder_table_update_hambern_request_requests.php

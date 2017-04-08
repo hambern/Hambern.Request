@@ -1,5 +1,5 @@
 title: 'hambern.request::lang.requests.label'
-modelClass: hambern\request\Models\Request
+modelClass: Hambern\Request\Models\Request
 list: $/hambern/request/models/request/columns.yaml
 recordUrl: 'hambern/request/requests/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'

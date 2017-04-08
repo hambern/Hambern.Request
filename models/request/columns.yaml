@@ -11,11 +11,12 @@ columns:
         invisible: false
     status_id:
         label: 'hambern.request::lang.labels.status'
-        relation: status
-        select: title
+        type: text
         searchable: true
-        sortable: true
         invisible: true
+        sortable: true
+        select: title
+        relation: status
     subject:
         label: 'hambern.request::lang.labels.subject'
         type: text
@@ -24,7 +25,7 @@ columns:
     content:
         label: 'hambern.request::lang.labels.content'
         type: text
-        truncate: 50
+        truncate: '50'
         searchable: true
         sortable: false
         invisible: true
@@ -46,6 +47,14 @@ columns:
         sortable: true
     created_at:
         label: 'hambern.request::lang.labels.created'
-        type: date time
+        type: timesince
         searchable: true
         sortable: true
+    notes:
+        label: 'hambern.request::lang.labels.notes'
+        type: text
+        invisible: true
+    updated_at:
+        label: 'hambern.request::lang.labels.updated'
+        type: timesince
+        invisible: true

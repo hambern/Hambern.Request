@@ -28,6 +28,11 @@ class Request extends Model
     public $fillable = ['subject', 'name', 'phone', 'email', 'content'];
 
     /**
+     * @var array
+     */
+    public $jsonable = ['notes'];
+    
+    /**
      * @var string
      */
     public $table = 'hambern_request_requests';

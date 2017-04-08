@@ -17,34 +17,42 @@ fields:
         default: now
         span: full
         type: datepicker
-
 tabs:
-  fields:
-    content:
-        label: 'hambern.request::lang.labels.content'
-        size: giant
-        span: full
-        type: textarea
-        tab: 'hambern.request::lang.labels.content'
-    name:
-        label: 'hambern.request::lang.labels.name'
-        span: full
-        required: 1
-        type: text
-        tab: 'hambern.request::lang.labels.customer'
-    email:
-        label: 'hambern.request::lang.labels.email'
-        span: auto
-        type: text
-        tab: 'hambern.request::lang.labels.customer'
-    phone:
-        label: 'hambern.request::lang.labels.phone'
-        span: auto
-        type: text
-        tab: 'hambern.request::lang.labels.customer'
-    note:
-        label: 'hambern.request::lang.labels.note'
-        size: giant
-        span: full
-        type: textarea
-        tab: 'hambern.request::lang.labels.note'
+    fields:
+        content:
+            label: 'hambern.request::lang.labels.content'
+            size: giant
+            span: full
+            type: textarea
+            tab: 'hambern.request::lang.labels.content'
+        name:
+            label: 'hambern.request::lang.labels.name'
+            span: full
+            required: 1
+            type: text
+            tab: 'hambern.request::lang.labels.customer'
+        email:
+            label: 'hambern.request::lang.labels.email'
+            span: auto
+            type: text
+            tab: 'hambern.request::lang.labels.customer'
+        phone:
+            label: 'hambern.request::lang.labels.phone'
+            span: auto
+            type: text
+            tab: 'hambern.request::lang.labels.customer'
+        notes:
+            label: 'hambern.request::lang.labels.notes'
+            oc.commentPosition: ''
+            prompt: 'hambern.request::lang.labels.add_new'
+            span: full
+            type: repeater
+            tab: 'hambern.request::lang.labels.notes'
+            form:
+                fields:
+                    note:
+                        label: 'hambern.request::lang.labels.note'
+                        size: tiny
+                        oc.commentPosition: ''
+                        span: full
+                        type: textarea
